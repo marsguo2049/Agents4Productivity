@@ -1,128 +1,136 @@
-# Contribution to Agents4Productivity
+# 🧠 子期 - AI驱动的个人成长绩效教练
 
-## 🦊 OpenClaw Focus Agent
-
-This contribution adds a **single-agent focused productivity assistant** to Agents4Productivity, built on the [OpenClaw](https://github.com/openclaw/openclaw) framework.
-
-### Background
-
-**Original Multi-Agent System (Claude Code)**
-- Agents4Productivity originally uses a multi-agent architecture with 5 specialized agents:
-  - 心语 (HeartTalk) - Conversation parsing
-  - 蓝图 (Blueprint) - Planning generation
-  - 回音 (Echo) - Report generation
-  - 灵犀 (灵犀) - Deep analysis
-  - 明镜 (Mirror) - Monitoring & alerts
-- Designed for Claude Code environment
-- Powerful but complex coordination required
-
-**New: Single-Agent Focus System (OpenClaw)**
-- **Fox Agent** - One agent handles everything
-- Built specifically for **focus management** and **deep work**
-- Runs on OpenClaw framework
-- Simpler, lighter, purpose-built
-
-### Why Add This?
-
-| Aspect | Multi-Agent (Original) | Single-Agent (New) |
-|--------|----------------------|-------------------|
-| Complexity | High (5 agents) | Low (1 agent) |
-| Setup | Requires Claude Code | OpenClaw compatible |
-| Use Case | Comprehensive productivity | Focus/deep work only |
-| Maintenance | Complex coordination | Simple data flow |
-| Best For | Power users | Focus-oriented users |
-
-**Not a replacement** - both coexist for different needs.
+子期是一个智能的个人生产力追踪和分析系统，通过对话解析、数据收集和多维度分析，帮助你了解自己的工作模式、优化时间管理，并发现提升效率的机会。它不仅是工具，更是陪伴你成长的智慧伙伴。
 
 ---
 
-## 📁 What's Included
+## 🆕 新增：OpenClaw Focus Agent
+
+**2026-03-21 更新** - 新增基于 [OpenClaw](https://github.com/openclaw/openclaw) 框架的单 Agent 专注系统
+
+### 为什么添加这个？
+
+| 特性 | 多Agent系统（子期） | 单Agent系统（OpenClaw Focus） |
+|------|-------------------|----------------------------|
+| 架构 | 5个Agent协作（心语/蓝图/回音/灵犀/明镜） | 1个Agent全能 |
+| 环境 | Claude Code | OpenClaw |
+| 复杂度 | 高 | 低 |
+| 适用场景 | 全面生产力管理 | 专注深度工作 |
+| 最佳用户 | 需要完整系统的用户 | 专注导向的用户 |
+
+**两者互补，不是替代** - 根据需求选择适合的方案。
+
+### OpenClaw Focus Agent 包含
 
 ```
 openclaw-focus-agent/
-├── README.md              # Agent documentation
-├── AGENTS.md              # Operational manual (4 modes)
-├── SOUL.md                # Agent personality template
-├── IDENTITY.md            # Identity definition template
-├── HEARTBEAT.md           # Daily heartbeat tasks
-├── USER.md.template       # User profile template
-└── MEMORY.md.template     # Memory initialization template
+├── AGENTS.md              # 四大工作模式（规划/专注/复盘/知识）
+├── SOUL.md                # Agent性格模板
+├── HEARTBEAT.md           # 心跳自动化
+├── USER.md.template       # 用户配置模板
+└── ...
 ```
 
-## ✨ Key Features
+**核心特性：**
+- 🎯 四大工作模式合一
+- 🔄 选择性同步机制（`#global-insight` 标签）
+- ⏰ 心跳自动化（每日21:00检查）
 
-### 1. Four Work Modes in One Agent
-- **🎯 Plan Mode** - Task breakdown and scheduling
-- **🚀 Focus Mode** - Deep work companionship
-- **📊 Reflect Mode** - Analysis and reporting  
-- **🔍 Knowledge Mode** - Methodology retrieval
-
-### 2. Selective Memory Sync
-```
-Agent Memory          Main Memory
-    │                    ▲
-    ├── Global Insight ──┤ (synced)
-    │   #global-insight  │
-    │                    │
-    └── Local Insight    │ (not synced)
-        (session details)│
-```
-
-Global insights (work habits, efficiency patterns) tagged with `#global-insight` 
-sync to main memory periodically.
-
-### 3. Heartbeat Automation
-- Daily 21:00 check-in
-- DDL alerts
-- Automatic report generation
-
-## 🚀 Usage
-
-### Prerequisites
-- [OpenClaw](https://github.com/openclaw/openclaw) installed
-- GitHub repository for agent workspace
-
-### Setup
-1. Copy `openclaw-focus-agent/` to your workspace
-2. Customize `USER.md.template` with your preferences
-3. Customize `IDENTITY.md` with your agent's personality
-4. Configure OpenClaw to use this workspace
-5. Start using the four work modes
-
-## 🔄 Comparison with Original System
-
-```
-Claude Code Environment          OpenClaw Environment
-       │                               │
-       ├── 心语 (5 agents)             ├── Fox Agent (1 agent)
-       ├── 蓝图                        │   - Plan
-       ├── 回音                        │   - Focus
-       ├── 灵犀                        │   - Reflect
-       └── 明镜                        │   - Knowledge
-                                       │
-       Comprehensive                   Focus-specific
-       Complex setup                   Simple setup
-```
-
-## 📝 Future Integration Ideas
-
-1. **Hybrid Mode**: Use Fox Agent as "gateway", dispatch to specialists when needed
-2. **Mode Library**: Extract Fox's 4 modes as reusable components for multi-agent system
-3. **Sync Protocol**: Adopt Fox's selective sync in multi-agent memory management
-
-## 📄 License
-
-MIT License - Feel free to adapt for your own productivity system.
-
-## 🙏 Acknowledgments
-
-This contribution bridges the original Agents4Productivity multi-agent design 
-with the OpenClaw single-agent implementation.
-
-Original multi-agent framework: Agents4Productivity  
-Single-agent implementation: Fox Agent (marsguo2049/fox-memory)  
-Framework: [OpenClaw](https://github.com/openclaw/openclaw)
+详见 `openclaw-focus-agent/README.md`
 
 ---
 
-_\"Track the target until captured.\"_ 🦊
+## 📁 系统架构（多Agent版本）
+
+```
+子期/
+├── data/                               # 数据存储层
+│   ├── mission/                        # 非结构化想法收集
+│   ├── plan/                           # 结构化计划输出
+│   ├── expect/                         # 期望任务记录
+│   ├── actual/                         # 实际完成记录
+│   ├── emotion/                        # 情绪状态记录
+│   ├── user_preference.md              # 用户偏好档案
+│   └── tomato_clock/                   # 番茄钟数据
+│
+├── reports/                            # 分析报告层
+│   ├── daily/                          # 日报
+│   ├── weekly/                         # 周报
+│   ├── monthly/                        # 月报
+│   ├── analysis/                       # 深度分析报告
+│   └── custom/                         # 自定义报告
+│
+└── .claude/agents/                     # 智能Agent配置
+    ├── 心语.md                          # 心语 Agent
+    ├── 蓝图.md                          # 蓝图 Agent
+    ├── 回音.md                          # 回音 Agent
+    ├── 灵犀.md                          # 灵犀 Agent
+    └── 明镜.md                          # 明镜 Agent
+```
+
+## 🤖 智能Agent团队
+
+### 1. 心语 (心语 Agent)
+
+**职责：**
+- 倾听用户的内心话语，解析对话内容
+- 智能区分"期望任务"vs"实际完成"
+- 识别情绪状态和能量水平
+- 按时间戳整理并存储数据
+
+### 2. 蓝图 (蓝图 Agent)
+
+**职责：**
+- 分析`mission/`中的非结构化想法和目标
+- 结合`expect/`中的具体期望任务
+- 运用重要紧急四象限进行优先级排序
+- 生成结构化的日计划、周计划
+
+### 3. 回音 (回音 Agent)
+
+**职责：**
+- 根据指定时间段生成分析报告
+- 整合多维度数据（期望vs实际、番茄钟、情绪）
+- 计算关键指标和趋势
+- 提供个性化洞察和建议
+- 维护用户偏好档案
+
+### 4. 灵犀 (灵犀 Agent)
+
+**职责：**
+- 长期趋势分析和深度模式识别
+- 个人生产力习惯挖掘与认知偏差洞察
+- 技术突破过程分析
+- 预测性分析
+
+### 5. 明镜 (明镜 Agent)
+
+**职责：**
+- 基于用户偏好档案提供实时提醒和认知偏差检查
+- 帮助用户保持目标导向和有效工作方法
+- 识别AI依赖、局部最优解等认知陷阱
+
+## 🚀 使用流程
+
+### 日常使用
+1. **想法收集** → 随时记录想到的事情到`mission/`
+2. **开始工作前** → 让蓝图Agent基于mission生成今日计划
+3. **工作中** → 随时更新进度和状态，让明镜Agent提供实时提醒
+4. **遇到情绪波动** → 记录当前感受
+5. **结束工作** → 导入番茄钟数据
+6. **每日回顾** → 自动生成日报，回音Agent更新用户偏好档案
+
+## ✨ 系统特色
+
+- **🎯 个性化分析**：完全基于你的个人数据
+- **📉 模式识别**：发现你的独特工作节奏
+- **💡 智能建议**：基于数据驱动的改进方案
+- **🔄 持续优化**：随着数据积累越来越准确
+- **🧠 情绪感知**：关注心理状态对生产力的影响
+- **🤝 温暖陪伴**：如知音般理解你的成长伙伴
+- **🪞 实时提醒**：明镜Agent提供认知偏差检查
+- **📊 动态档案**：用户偏好档案持续进化
+
+---
+
+*子期致力于成为你最懂你的成长伙伴，通过数据驱动的洞察，让每一天都比昨天更高效、更平衡。*
