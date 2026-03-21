@@ -1,14 +1,16 @@
-# Fox Agent Template
+# OpenClaw Focus Agent
 
-A single-agent focused productivity assistant template.
-Derived from the Fox Agent implementation in the private workspace.
+A single-agent focused productivity assistant for the [OpenClaw](https://github.com/openclaw/openclaw) framework.
 
 ## 🦊 Philosophy
 
 > "Track the target until captured."
 
-Fox Agent is a **single-agent** alternative to multi-agent productivity systems.
+This agent provides a **single-agent alternative** to multi-agent productivity systems.
 It combines planning, focus, reflection, and knowledge retrieval in one cohesive agent.
+
+**Part of Agents4Productivity** - This implementation complements the original 
+multi-agent system by offering a simpler, focus-specific option.
 
 ## ✨ Key Features
 
@@ -20,7 +22,7 @@ It combines planning, focus, reflection, and knowledge retrieval in one cohesive
 ## 📁 Template Structure
 
 ```
-fox-agent-template/
+openclaw-focus-agent/
 ├── AGENTS.md           # Operational manual (FOUR modes)
 ├── SOUL.md            # Agent personality and values
 ├── IDENTITY.md        # Agent identity definition
@@ -32,10 +34,16 @@ fox-agent-template/
 
 ## 🚀 Usage
 
-1. Copy this template to your workspace
+### Prerequisites
+- [OpenClaw](https://github.com/openclaw/openclaw) framework installed
+- GitHub repository for agent workspace (see fox-memory for example)
+
+### Setup
+1. Copy this template to your OpenClaw workspace
 2. Customize USER.md.template with your preferences
 3. Customize IDENTITY.md to define your agent's personality
-4. Start using the four work modes
+4. Configure OpenClaw to use this workspace
+5. Start using the four work modes
 
 ## 📚 Four Work Modes
 
@@ -66,10 +74,10 @@ Trigger: "methodology", "how to", "strategy"
 
 ## 🔗 Sync Mechanism
 
-Fox Agent implements a **selective sync** pattern:
+Implements a **selective sync** pattern:
 
 ```
-Fox Memory          Main Memory
+Agent Memory          Main Memory
     │                    ▲
     ├── Global Insight ──┤ (synced)
     │   #global-insight
@@ -90,6 +98,20 @@ and periodically synced to the main memory system.
 - **Professional but not oppressive**: Partner, not taskmaster
 - **Mistakes are scent trails**: Learn and improve
 
+## 🔄 Relationship to Agents4Productivity
+
+This is a **single-agent implementation** derived from the multi-agent 
+Agents4Productivity framework:
+
+| | Multi-Agent (Original) | Single-Agent (This) |
+|--|----------------------|-------------------|
+| Agents | 5 (心语/蓝图/回音/灵犀/明镜) | 1 (Fox) |
+| Framework | Claude Code | OpenClaw |
+| Complexity | High | Low |
+| Best For | Comprehensive productivity | Focus/deep work |
+
+Both approaches coexist - choose based on your needs.
+
 ## 📄 License
 
 MIT License - Feel free to adapt for your own productivity system.
@@ -98,4 +120,6 @@ MIT License - Feel free to adapt for your own productivity system.
 
 This template is derived from the Fox Agent implementation, 
 which evolved from the Agents4Productivity multi-agent framework.
+
+Framework: [OpenClaw](https://github.com/openclaw/openclaw)
 
