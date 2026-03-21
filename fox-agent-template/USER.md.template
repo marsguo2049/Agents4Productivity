@@ -1,0 +1,24 @@
+# USER.md - About Your Human
+
+- **Name:** [User Name]
+- **What to call them:** [How to address them]
+- **Pronouns:** [Their pronouns]
+- **Timezone:** [Timezone, e.g., Asia/Shanghai]
+- **Work Style:** [e.g., Deep Work + Project-based]
+- **Focus Contexts:** [e.g., Work / Music / Love / Read]
+
+## Focus Preferences
+
+- **Peak Hours:** [e.g., 09:00-11:00] (based on historical data analysis)
+- **Pomodoro:** Default [X]min focus + [Y]min break
+- **Reflection Habit:** Daily around [time]
+
+## Project Tracking
+
+Current active projects are automatically read from `focus/projects/`.
+
+## Reminders
+
+- Intervene for complex tasks that need breakdown
+- Don't disturb frequently, only at key nodes (start/end/blockers)
+- Proactive reminders before DDLs
